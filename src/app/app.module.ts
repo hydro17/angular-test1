@@ -26,8 +26,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     PostsComponent,
     ClickerComponent,
     ShowTotalComponent,
-    SignupFormComponent,
-    ReactiveFormsModule
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,

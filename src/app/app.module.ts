@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { PostsComponent } from './posts/posts.component';
 import { ClickerComponent } from './clicker/clicker.component';
 import { TotalizerService } from './services/totalizer.service';
 import { ShowTotalComponent } from './show-total/show-total.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +26,14 @@ import { ShowTotalComponent } from './show-total/show-total.component';
     PostsComponent,
     ClickerComponent,
     ShowTotalComponent,
+    SignupFormComponent,
+    ReactiveFormsModule
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [TotalizerService],
   bootstrap: [AppComponent]

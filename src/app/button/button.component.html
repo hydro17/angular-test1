@@ -1,0 +1,6 @@
+
+<!-- <button (click)="isSelected=!isSelected" [class.sel]="isSelected" [class.notSel]="!isSelected">Text: {{ text }}</button> -->
+<!-- <span (click)="isSelected=!isSelected" [class.sel]="isSelected" [class.notSel]="!isSelected">{{ text }}</span> -->
+
+<input (input)="onInput($event)" type="text">
+<p>{{ inputText | casing }}</p>

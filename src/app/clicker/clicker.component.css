@@ -1,0 +1,12 @@
+div.outer {
+  width: 150px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 7px;
+}
+
+.center-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

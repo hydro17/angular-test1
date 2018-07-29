@@ -1,0 +1,27 @@
+@import url("https://use.fontawesome.com/releases/v5.1.1/css/all.css");
+
+.zippy {
+  width: 300px;
+  /* padding: 20px; */
+  font-size: 1.5em;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.opened {
+  background-color: lightgray;
+}
+
+.fas {
+  float: right;
+}
+
+.zippy-header, .zippy-body {
+  padding: 20px;
+}
+
+/* .zippy-body {
+
+} */

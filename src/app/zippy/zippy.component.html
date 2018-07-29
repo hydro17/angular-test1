@@ -1,0 +1,10 @@
+<div class="zippy">
+  <div class="zippy-header" [ngClass]="{ 'opened': isOpen }" (click)="isOpen=!isOpen">
+    {{ title }}
+    <i class="fas" [class.fa-caret-up]="isOpen" [class.fa-caret-down]="!isOpen">
+    </i>
+  </div>
+  <div class="zippy-body" *ngIf="isOpen">
+    <ng-content></ng-content>
+  </div>
+</div>

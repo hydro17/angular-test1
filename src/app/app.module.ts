@@ -13,7 +13,6 @@ import { PostsComponent } from './posts/posts.component';
 import { ClickerComponent } from './clicker/clicker.component';
 import { TotalizerService } from './services/totalizer.service';
 import { ShowTotalComponent } from './show-total/show-total.component';
-import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     PostsComponent,
     ClickerComponent,
     ShowTotalComponent,
-    SignupFormComponent
   ],
   imports: [
     BrowserModule,

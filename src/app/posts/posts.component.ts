@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']

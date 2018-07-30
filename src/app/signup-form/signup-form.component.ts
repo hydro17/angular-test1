@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -9,7 +9,18 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class SignupFormComponent {
   form = new FormGroup({
-    username: new FormControl(),
-    password: new FormControl()
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3)
+    ]),
+    password: new FormControl('', Validators.required)
   });
+
+  json = JSON;
+
+  get username() {
+    const username = this.form.get('username');
+    JSON.stringify(username.errors);
+    return username;
+  }
 }

@@ -13,6 +13,7 @@ import { PostsComponent } from './posts/posts.component';
 import { ClickerComponent } from './clicker/clicker.component';
 import { TotalizerService } from './services/totalizer.service';
 import { ShowTotalComponent } from './show-total/show-total.component';
+import { Nav1Component } from './nav1/nav1.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ShowTotalComponent } from './show-total/show-total.component';
     PostsComponent,
     ClickerComponent,
     ShowTotalComponent,
+    Nav1Component,
   ],
   imports: [
     BrowserModule,

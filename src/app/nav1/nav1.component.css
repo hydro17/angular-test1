@@ -1,0 +1,35 @@
+/* :root {
+  --nav-border-radius: 10px;
+} */
+
+.nav-container {
+  --nav-border-radius: 4px;
+  display: flex;
+  list-style-type: none;
+  padding: 20px;
+  background-color: #aaa;
+  border-radius: var(--nav-border-radius);
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: var(--nav-border-radius);
+  width: 120px;
+  /* transition: all 2s; */
+}
+
+/* .nav-item:hover {
+  width: 150px;
+  background-color: #ccc;
+  transition: all .3s;
+} */
+
+.nav-item:not(:last-of-type) {
+  margin-right: 10px;
+}

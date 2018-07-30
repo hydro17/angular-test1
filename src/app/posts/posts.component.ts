@@ -1,6 +1,7 @@
 import { $BANG } from '@angular/compiler/src/chars';
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { PostsService } from '../services/posts.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -10,40 +11,46 @@ import { Http } from '@angular/http';
 })
 export class PostsComponent implements OnInit {
   posts: any[];
-  private url = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http: Http) {
+  constructor(private postsService: PostsService) {
   }
 
   ngOnInit() {
-    this.http.get(this.url)
+    this.postsService.getPosts()
       .subscribe(response => this.posts = response.json());
   }
 
   createPost(input: HTMLInputElement) {
-    const post = { title: input.value };
+    const newPost = { title: input.value };
 
-    this.http.post(this.url, JSON.stringify(post))
+    this.postsService.createPost(newPost)
       .subscribe(response => {
         console.log(response.json());
 
-        post['id'] = response.json().id;
+        newPost['id'] = response.json().id;
 
-        this.posts.splice(0, 0, post);
+        this.posts.splice(0, 0, newPost);
         input.value = '';
       });
   }
 
   updatePost(post) {
-    // this.http.put(this.url + '/' + post.id, JSON.stringify(post))
-    //   .subscribe(response => console.log(response.json()));
+    this.postsService.updatePost(post)
+      .subscribe(
+        response => console.log(response.json()),
+        error => {
+          if (error.status === 404) {
+            console.log('404');
+          }
+        }
+      );
 
-    this.http.patch(this.url + '/' + post.id, JSON.stringify({ title: 'aaa' }))
-      .subscribe(response => console.log(response.json()));
+    // this.http.patch(this.url + '/' + post.id, JSON.stringify({ title: 'aaa' }))
+    //   .subscribe(response => console.log(response.json()));
   }
 
   deletePost(post) {
-    this.http.delete(this.url + '/' + post.id)
+    this.postsService.deletePost(post.id)
       .subscribe(
         response => {
           console.log(response.json());

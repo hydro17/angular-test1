@@ -43,7 +43,7 @@ export class PostsComponent implements OnInit {
   }
 
   deletePost(post) {
-    this.http.delete(this.url + '/' + 345)
+    this.http.delete(this.url + '/' + post.id)
       .subscribe(
         response => {
           console.log(response.json());

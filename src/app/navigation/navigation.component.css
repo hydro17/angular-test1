@@ -2,16 +2,18 @@
   --nav-border-radius: 10px;
 } */
 
-.nav-container {
-  --nav-border-radius: 4px;
-  display: flex;
-  list-style-type: none;
-  padding: 20px;
+.nav-bar {
+  padding: 20px 0;
   background-color: #aaa;
-  border-radius: var(--nav-border-radius);
 }
 
+/* .nav-container {
+  display: flex;
+} */
+
 .nav-item {
+  --nav-border-radius: 4px;
+  list-style-type: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,4 +34,8 @@
 
 .nav-item:not(:last-of-type) {
   margin-right: 10px;
+}
+
+.active-link {
+  background-color: lightskyblue;
 }

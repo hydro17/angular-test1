@@ -14,7 +14,7 @@ import { PostsComponent } from './posts/posts.component';
 import { ClickerComponent } from './clicker/clicker.component';
 import { TotalizerService } from './services/totalizer.service';
 import { ShowTotalComponent } from './show-total/show-total.component';
-import { NavComponent } from './nav/nav.component';
+import { NavigationComponent } from './navigation/navigation.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
@@ -30,7 +30,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     PostsComponent,
     ClickerComponent,
     ShowTotalComponent,
-    NavComponent,
+    NavigationComponent,
     HomePageComponent,
     PageNotFoundComponent,
     SignupFormComponent
@@ -43,7 +43,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     RouterModule.forRoot([
       { path: '', component: HomePageComponent },
       { path: 'posts', component: PostsComponent },
-      // { path: 'sign-up', component: SignUComponent },
+      { path: 'signup-form', component: SignupFormComponent },
       { path: '**', component: PageNotFoundComponent },
     ])
   ],

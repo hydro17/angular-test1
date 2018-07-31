@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
@@ -14,6 +15,8 @@ import { ClickerComponent } from './clicker/clicker.component';
 import { TotalizerService } from './services/totalizer.service';
 import { ShowTotalComponent } from './show-total/show-total.component';
 import { NavComponent } from './nav/nav.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +30,19 @@ import { NavComponent } from './nav/nav.component';
     ClickerComponent,
     ShowTotalComponent,
     NavComponent,
+    HomePageComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { path: '', component: HomePageComponent },
+      { path: 'posts', component: PostsComponent },
+      // { path: 'sign-up', component: SignUComponent },
+      { path: '**', component: PageNotFoundComponent },
+    ])
   ],
   providers: [TotalizerService],
   bootstrap: [AppComponent]
